@@ -1,7 +1,7 @@
 package com.test.task.nasa.app.di
 
 import com.google.gson.GsonBuilder
-import com.test.task.nasa.app.data.remote.ApodWebService
+import com.test.task.nasa.app.data.remote.NasaWebService
 import com.test.task.nasa.app.data.remote.NasaRemoteSource
 import com.test.task.nasa.app.utils.AppConstants
 import dagger.Module
@@ -40,13 +40,13 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideNasaService(retrofit: Retrofit): ApodWebService {
-        return retrofit.create(ApodWebService::class.java)
+    fun provideNasaService(retrofit: Retrofit): NasaWebService {
+        return retrofit.create(NasaWebService::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideNasaClient(nasaService: ApodWebService): NasaRemoteSource {
+    fun provideNasaClient(nasaService: NasaWebService): NasaRemoteSource {
         return NasaRemoteSource(nasaService)
     }
 }
