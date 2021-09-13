@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestTaskNasa</string>
+    <string name="home_date_label">Date: </string>
+    <string name="menu_select_date">Select date</string>
+</resources>
